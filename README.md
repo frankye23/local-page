@@ -1,58 +1,47 @@
-<h1>vue-pure-admin精简版</h1>
+<!--
+ * @Author: yedaf
+ * @Date: 2022-02-22 10:45:27
+ * @LastEditTime: 2022-02-23 18:07:18
+ * @LastEditors: yedaf
+ * @Description: readme 文档
+ * @FilePath: \local-page\README.md
+ * 可以输入预定的版权声明、个性签名、空行等
+-->
 
-[![license](https://img.shields.io/github/license/xiaoxian521/vue-pure-admin.svg)](LICENSE)
+# Vue 3 + Typescript + Vite
 
-**中文** | [English](./README.en-US.md)
+I use official template Vue 3 + Typescript to build .The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
-## 介绍
+# Other techs
 
-精简版是基于[vue-pure-admin](https://github.com/xiaoxian521/vue-pure-admin)提炼出的架子，包含主体功能，更适合实际项目开发，打包后的大小仅 `2MB`多
+element-plus + vue-router + vuex + vue-i18n
 
-## 配套视频
+## The template I use in this project
 
-- [点我查看教程](https://www.bilibili.com/video/BV1534y1S7HV)
-- [点我查看 UI 设计](https://www.bilibili.com/video/BV17g411T7rq)
+[vue-pure-admin](https://github.com/xiaoxian521/vue-pure-admin)
 
-## 配套文档
+## Recommended IDE Setup
 
-- [点我查看文档](https://pure-admin-doc.vercel.app)
+- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
 
-## 维护者
+## Type Support For `.vue` Imports in TS
 
-[xiaoxian521](https://github.com/xiaoxian521)
+Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's `.vue` type support plugin by running `Volar: Switch TS Plugin on/off` from VSCode command palette.
 
-## 捐赠
+## Getting started
 
-如果你觉得这个项目对你有帮助，你可以帮作者买一杯咖啡表示支持
+```bash
+# clone the project
+git clone https://github.com/frankye23/home-page.git
 
-<img src="http://yiming_chang.gitee.io/manages/pay.jpg" width="150px" height="150px" />
-
-## QQ 交流群
-
-群里严禁`黄`、`赌`、`毒`、`vpn`等违法行为！
-
-<img src="http://yiming_chang.gitee.io/manages/qq.jpg" width="150px" height="225px" />
-
-## 用法
-
-### 安装依赖
-
+# install dependencies
 pnpm install
 
-### 安装一个包
+### install one package
+pnpm add ''
 
-pnpm add 包名
+# serve with hot reload at localhost:8086
+pnpm dev
+```
 
-### 卸载一个包
-
-pnpm remove 包名
-
-我认为你应该先 fork 项目去开发，以便我更新时你可以同步拉取更新！！！
-
-## ⚠️ 注意
-
-精简版不接受任何 issues 和 pr，如果有问题请到完整版 https://github.com/xiaoxian521/vue-pure-admin/issues/new/choose 去提，谢谢！！！
-
-## 许可证
-
-原则上不收取任何费用及版权，可以放心使用，不过如需二次开源（比如用此平台二次开发并开源）请联系作者获取许可！
+This will automatically open http://192.168.126.1:8848/.

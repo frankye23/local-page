@@ -1,3 +1,12 @@
+/*
+ * @Author: your name
+ * @Date: 2022-02-23 17:57:55
+ * @LastEditTime: 2022-02-23 18:28:24
+ * @LastEditors: your name
+ * @Description:
+ * @FilePath: \local-page\src\utils\storage\responsive.ts
+ * 可以输入预定的版权声明、个性签名、空行等
+ */
 // 响应式storage
 import { App } from "vue";
 import Storage from "responsive-storage";
@@ -16,7 +25,7 @@ export const injectResponsiveStorage = (app: App, config: ServerConfigs) => {
       layout: {
         type: Object,
         default: Storage.getData(undefined, "layout") ?? {
-          layout: config.Layout ?? "vertical",
+          layout: config.Layout ?? "horizontal",
           theme: config.Theme ?? "default",
           darkMode: config.DarkMode ?? false,
           sidebarStatus: config.SidebarStatus ?? true,

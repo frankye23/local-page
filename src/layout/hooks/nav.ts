@@ -4,6 +4,7 @@ import { emitter } from "/@/utils/mitt";
 import { routeMetaType } from "../types";
 import { transformI18n } from "/@/plugins/i18n";
 import { storageSession } from "/@/utils/storage";
+import { storageLocal } from "/@/utils/storage";
 import { useAppStoreHook } from "/@/store/modules/app";
 import { Title } from "../../../public/serverConfig.json";
 import { useEpThemeStoreHook } from "/@/store/modules/epTheme";
@@ -37,6 +38,7 @@ export function useNav() {
   // 退出登录
   function logout() {
     storageSession.removeItem("info");
+    storageLocal.removeItem("responsive-layout");
     router.push("/login");
   }
 

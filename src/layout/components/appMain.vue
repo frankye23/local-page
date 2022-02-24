@@ -1,10 +1,10 @@
 <!--
  * @Author: your name
  * @Date: 2022-02-23 12:03:46
- * @LastEditTime: 2022-02-23 16:16:13
+ * @LastEditTime: 2022-02-23 18:12:30
  * @LastEditors: your name
  * @Description: 
- * @FilePath: \pure-admin-thin\src\layout\components\appMain.vue
+ * @FilePath: \local-page\src\layout\components\appMain.vue
  * 可以输入预定的版权声明、个性签名、空行等
 -->
 <template>
@@ -93,7 +93,7 @@ const hideTabs = computed(() => {
 });
 
 const layout = computed(() => {
-  return instance?.layout.layout === "vertical";
+  return instance?.layout.layout === "horizontal";
 });
 
 const getSectionStyle = computed(() => {
