@@ -21,7 +21,7 @@
             }
           }"
         >
-          Pure Admin
+          homepage
         </h2>
         <div
           class="input-group user focus"

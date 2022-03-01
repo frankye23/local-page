@@ -1,10 +1,10 @@
 <!--
  * @Author: your name
  * @Date: 2022-02-23 12:03:46
- * @LastEditTime: 2022-02-23 16:13:53
+ * @LastEditTime: 2022-03-01 13:55:43
  * @LastEditors: your name
  * @Description: 
- * @FilePath: \pure-admin-thin\src\layout\index.vue
+ * @FilePath: \local-page\src\layout\index.vue
  * 可以输入预定的版权声明、个性签名、空行等
 -->
 <template>
@@ -19,10 +19,7 @@
       @click="useAppStoreHook().toggleSideBar()"
     />
     <Vertical
-      v-show="
-        !pureSetting.hiddenSideBar &&
-        (layout.includes('vertical') || layout.includes('mix'))
-      "
+      v-show="!pureSetting.hiddenSideBar && layout.includes('vertical')"
     />
     <div
       :class="[

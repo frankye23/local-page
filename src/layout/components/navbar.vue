@@ -1,16 +1,11 @@
 <template>
   <div class="navbar">
     <Hamburger
-      v-if="pureApp.layout !== 'mix'"
       :is-active="pureApp.sidebar.opened"
       class="hamburger-container"
       @toggleClick="toggleSideBar"
     />
     <div v-if="pureApp.layout === 'vertical'" class="vertical-header-right">
-      <!-- 通知 -->
-      <Notice id="header-notice" />
-      <!-- 全屏 -->
-      <screenfull id="header-screenfull" v-show="!deviceDetection()" />
       <!-- 国际化 -->
       <el-dropdown id="header-translation" trigger="click">
         <globalization />
@@ -66,12 +61,9 @@
 import { useI18n } from "vue-i18n";
 import { useNav } from "../hooks/nav";
 import { useRoute } from "vue-router";
-import Notice from "./notice/index.vue";
 import avatars from "/@/assets/avatars.jpg";
 import Hamburger from "./sidebar/hamBurger.vue";
 import { watch, getCurrentInstance } from "vue";
-import { deviceDetection } from "/@/utils/deviceDetection";
-import screenfull from "../components/screenfull/index.vue";
 import globalization from "/@/assets/svg/globalization.svg?component";
 
 const route = useRoute();

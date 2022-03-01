@@ -1,63 +1,3 @@
-<script setup lang="ts">
-import { useI18n } from "vue-i18n";
-import { useNav } from "../../hooks/nav";
-import Notice from "../notice/index.vue";
-import { templateRef } from "@vueuse/core";
-import SidebarItem from "./sidebarItem.vue";
-import avatars from "/@/assets/avatars.jpg";
-import screenfull from "../screenfull/index.vue";
-import { useRoute, useRouter } from "vue-router";
-import { deviceDetection } from "/@/utils/deviceDetection";
-import { watch, nextTick, onMounted, getCurrentInstance } from "vue";
-import { usePermissionStoreHook } from "/@/store/modules/permission";
-import globalization from "/@/assets/svg/globalization.svg?component";
-
-const route = useRoute();
-const { locale } = useI18n();
-const routers = useRouter().options.routes;
-const menuRef = templateRef<ElRef | null>("menu", null);
-const instance =
-  getCurrentInstance().appContext.config.globalProperties.$storage;
-const title =
-  getCurrentInstance().appContext.config.globalProperties.$config?.Title;
-
-const {
-  logout,
-  backHome,
-  onPanel,
-  changeTitle,
-  handleResize,
-  menuSelect,
-  usename,
-  getDropdownItemStyle
-} = useNav();
-
-onMounted(() => {
-  nextTick(() => {
-    handleResize(menuRef.value);
-  });
-});
-
-watch(
-  () => locale.value,
-  () => {
-    changeTitle(route.meta);
-  }
-);
-
-function translationCh() {
-  instance.locale = { locale: "zh" };
-  locale.value = "zh";
-  handleResize(menuRef.value);
-}
-
-function translationEn() {
-  instance.locale = { locale: "en" };
-  locale.value = "en";
-  handleResize(menuRef.value);
-}
-</script>
-
 <template>
   <div class="horizontal-header">
     <div class="horizontal-header-left" @click="backHome">
@@ -66,7 +6,7 @@ function translationEn() {
         alt=""
         style="height: 35px; width: 35px"
       />
-      <h4>logo pic</h4>
+      <h4 class="ml-4">Apollo</h4>
     </div>
     <el-menu
       ref="menu"
@@ -84,10 +24,6 @@ function translationEn() {
       />
     </el-menu>
     <div class="horizontal-header-right">
-      <!-- 通知 -->
-      <Notice id="header-notice" />
-      <!-- 全屏 -->
-      <screenfull id="header-screenfull" v-show="!deviceDetection()" />
       <!-- 国际化 -->
       <el-dropdown id="header-translation" trigger="click">
         <globalization />
@@ -128,17 +64,63 @@ function translationEn() {
           </el-dropdown-menu>
         </template>
       </el-dropdown>
-      <el-icon
-        class="el-icon-setting"
-        :title="$t('buttons.hssystemSet')"
-        @click="onPanel"
-      >
-        <IconifyIconOffline icon="setting" />
-      </el-icon>
     </div>
   </div>
 </template>
 
+<script setup lang="ts">
+import { useI18n } from "vue-i18n";
+import { useNav } from "../../hooks/nav";
+import { templateRef } from "@vueuse/core";
+import SidebarItem from "./sidebarItem.vue";
+import avatars from "/@/assets/avatars.jpg";
+import { useRoute, useRouter } from "vue-router";
+import { watch, nextTick, onMounted, getCurrentInstance } from "vue";
+import { usePermissionStoreHook } from "/@/store/modules/permission";
+import globalization from "/@/assets/svg/globalization.svg?component";
+
+const route = useRoute();
+const { locale } = useI18n();
+const routers = useRouter().options.routes;
+const menuRef = templateRef<ElRef | null>("menu", null);
+const instance =
+  getCurrentInstance().appContext.config.globalProperties.$storage;
+
+const {
+  logout,
+  backHome,
+  changeTitle,
+  handleResize,
+  menuSelect,
+  usename,
+  getDropdownItemStyle
+} = useNav();
+
+onMounted(() => {
+  nextTick(() => {
+    handleResize(menuRef.value);
+  });
+});
+
+watch(
+  () => locale.value,
+  () => {
+    changeTitle(route.meta);
+  }
+);
+
+function translationCh() {
+  instance.locale = { locale: "zh" };
+  locale.value = "zh";
+  handleResize(menuRef.value);
+}
+
+function translationEn() {
+  instance.locale = { locale: "en" };
+  locale.value = "en";
+  handleResize(menuRef.value);
+}
+</script>
 <style lang="scss" scoped>
 .translation {
   ::v-deep(.el-dropdown-menu__item) {

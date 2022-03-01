@@ -1,3 +1,12 @@
+/*
+ * @Author: your name
+ * @Date: 2022-02-23 17:57:55
+ * @LastEditTime: 2022-03-01 13:55:22
+ * @LastEditors: your name
+ * @Description:
+ * @FilePath: \local-page\src\store\modules\epTheme.ts
+ * 可以输入预定的版权声明、个性签名、空行等
+ */
 import { store } from "/@/store";
 import { defineStore } from "pinia";
 import { getConfig } from "/@/config";
@@ -15,16 +24,6 @@ export const useEpThemeStore = defineStore({
   getters: {
     getEpThemeColor() {
       return this.epThemeColor;
-    },
-    // 用于mix导航模式下hamburger-svg的fill属性
-    fill() {
-      if (this.epTheme === "light") {
-        return "#409eff";
-      } else if (this.epTheme === "yellow") {
-        return "#d25f00";
-      } else {
-        return "#fff";
-      }
     }
   },
   actions: {

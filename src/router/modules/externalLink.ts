@@ -1,10 +1,10 @@
 /*
  * @Author: your name
  * @Date: 2022-02-23 12:03:46
- * @LastEditTime: 2022-02-23 17:30:01
+ * @LastEditTime: 2022-03-01 14:04:54
  * @LastEditors: your name
  * @Description:
- * @FilePath: \pure-admin-thin\src\router\modules\externalLink.ts
+ * @FilePath: \local-page\src\router\modules\externalLink.ts
  * 可以输入预定的版权声明、个性签名、空行等
  */
 import { $t } from "/@/plugins/i18n";
@@ -22,7 +22,7 @@ const externalLink = {
   },
   children: [
     {
-      path: "https://github.com/frankye23/local-page",
+      path: "https://www.baidu.com",
       meta: {
         title: $t("menus.help"),
         i18n: true,

@@ -1,3 +1,12 @@
+/*
+ * @Author: your name
+ * @Date: 2022-02-23 17:56:24
+ * @LastEditTime: 2022-03-01 14:40:56
+ * @LastEditors: your name
+ * @Description: yedaf
+ * @FilePath: \local-page\mock\asyncRoutes.ts
+ * 可以输入预定的版权声明、个性签名、空行等
+ */
 // 根据角色动态生成路由
 import { MockMethod } from "vite-plugin-mock";
 
